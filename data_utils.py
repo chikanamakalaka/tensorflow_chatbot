@@ -82,7 +82,8 @@ def create_vocabulary(vocabulary_path, data_path, max_vocabulary_size,
                 print('>>>> Vocab Truncated to: {}'.format(max_vocabulary_size))
             with open(vocabulary_path, 'wt', encoding='utf8') as vocab_file:
                 for w in vocab_list:
-                    vocab_file.write(w + '\n')
+                    # vocab_file.write(w + '\n')  -- Original
+                    vocab_file.write(unicode(w + '\n'))
 
 
 def initialize_vocabulary(vocabulary_path, encoding=CORNELL_MOVIE_CORPUS_ENCODING):
